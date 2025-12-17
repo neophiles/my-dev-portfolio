@@ -1,0 +1,37 @@
+import type { Project } from '../data/projects'
+import { Github } from 'lucide-react'
+
+function ProjectCard({ project }: { project: Project }) {
+  const {
+    image,
+    title,
+    description,
+    techStack,
+    githubLink,
+  } = project;
+
+  return (
+    <div className='flex flex-col rounded-xl overflow-hidden border border-blue-500/20 hover:scale-[101%] transition-transform duration-500'>
+      <img src={image} alt={title} className='w-full aspect-video object-cover' />
+      <div className='flex-1 flex flex-col gap-3 p-6 bg-gray-300/30 dark:bg-inherit'>
+        <div className='flex flex-col md:flex-row justify-between gap-3'>
+          <h1 className='text-xl font-bold'>{title}</h1>
+          <div className='flex items-center gap-2'>
+            {
+              techStack.map(tech => (
+                <img key={tech.name} src={tech.logo} alt={`${tech.name} Logo`} className={`w-6 h-6 ${tech.name === "React" ? "brightness-75" : ""}`} />
+              ))
+            }
+          </div>
+        </div>
+        <p className='line-clamp-3 text-ellipsis'>{description}</p>
+        <a href={githubLink} target='_blank' className='flex items-center gap-2 mt-auto text-sm text-gray-600 dark:text-gray-400'>
+          <Github className='w-4 h-4' />
+          <p>GitHub</p>
+        </a>
+      </div>
+    </div>
+  )
+}
+
+export default ProjectCard
