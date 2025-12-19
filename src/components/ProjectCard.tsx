@@ -1,4 +1,6 @@
 import type { Project } from '../data/projects'
+import GitHubLink from './GitHubLink'
+import HackathonLabel from './HackathonLabel'
 import { Github } from 'lucide-react'
 
 function ProjectCard({ project }: { project: Project }) {
@@ -6,6 +8,7 @@ function ProjectCard({ project }: { project: Project }) {
     image,
     title,
     description,
+    projectType,
     techStack,
     githubLink,
   } = project;
@@ -24,11 +27,16 @@ function ProjectCard({ project }: { project: Project }) {
             }
           </div>
         </div>
+        <div className='flex items-center gap-4'>
+          {
+            projectType === "Hackathon" && <HackathonLabel />
+          }
+        </div>
         <p className='line-clamp-3 text-ellipsis'>{description}</p>
-        <a href={githubLink} target='_blank' className='flex items-center gap-2 mt-auto text-sm text-gray-600 dark:text-gray-400'>
-          <Github className='w-4 h-4' />
-          <p>GitHub</p>
-        </a>
+        <div className='flex items-center gap-4 mt-auto'>
+          <GitHubLink link={githubLink} />
+        </div>
+        
       </div>
     </div>
   )
