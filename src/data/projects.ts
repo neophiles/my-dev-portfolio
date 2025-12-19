@@ -8,6 +8,7 @@ export type Project = {
   image: string,
   title: string,
   description: string,
+  projectType: string,
   techStack: Tech[],
   githubLink: string,
 }
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     image: confisenseIMG,
     title: 'ConFiSense',
     description: 'Your intelligent financial analysis and decision-support tool.',
+    projectType: 'Hackathon',
     techStack: [
       tech.HTML,
       tech.CSS,
@@ -28,6 +30,7 @@ export const projects: Project[] = [
     image: preskoIMG,
     title: 'PRESKO',
     description: 'A mobile-first web app that provides real-time heat indices, personalized safety tips, and an interactive map to help users find nearby cooling zones during extreme heat.',
+    projectType: 'Hackathon',
     techStack: [
       tech.JavaScript,
       tech.React,
@@ -39,6 +42,7 @@ export const projects: Project[] = [
     image: ligtasIMG,
     title: 'LIGTAS',
     description: 'Ligtas is a mobile-first web app that delivers real-time earthquake data, safety guides, evacuation center mapping, and route navigation to help users stay safe during seismic events.',
+    projectType: 'Hackathon',
     techStack: [
       tech.JavaScript,
       tech.React,
