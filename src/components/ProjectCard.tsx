@@ -1,6 +1,6 @@
 import type { Project } from '../data/projects'
 import GitHubLink from './GitHubLink'
-import HackathonLabel from './HackathonLabel'
+import ProjectLabelTab from './ProjectLabelTab'
 import { Github } from 'lucide-react'
 
 function ProjectCard({ project }: { project: Project }) {
@@ -8,7 +8,7 @@ function ProjectCard({ project }: { project: Project }) {
     image,
     title,
     description,
-    projectType,
+    projectLabels,
     techStack,
     githubLink,
   } = project;
@@ -27,9 +27,13 @@ function ProjectCard({ project }: { project: Project }) {
             }
           </div>
         </div>
-        <div className='flex items-center gap-4'>
+        <div className='flex flex-wrap items-center gap-2'>
           {
-            projectType === "Hackathon" && <HackathonLabel />
+            projectLabels.length !== 0 && (
+              projectLabels.map(labelData => (
+                <ProjectLabelTab labelData={labelData} />
+              ))
+            )
           }
         </div>
         <p className='line-clamp-3 text-ellipsis'>{description}</p>
