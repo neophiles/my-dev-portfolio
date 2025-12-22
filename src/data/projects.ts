@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     image: confisenseIMG,
     title: 'ConFiSense',
-    description: 'Your intelligent financial analysis and decision-support tool.',
+    description: 'An AI-powered financial what-if sandbox that lets users model budgeting, debt, and other real-life scenarios, adjust key variables, and instantly visualize outcomes, designed around the everyday financial realities of Filipinos.',
     projectType: 'Hackathon',
     techStack: [
       tech.HTML,
