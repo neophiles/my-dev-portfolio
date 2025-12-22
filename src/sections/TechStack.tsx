@@ -20,7 +20,7 @@ function TechStack() {
   }))
 
   return (
-    <section className='flex flex-col'>
+    <section id='tech-stack' className='flex flex-col'>
       <HeadingContainer icon={Hammer} sectionTitle={'Tech Stack'} />
       <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6'>
         {

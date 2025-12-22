@@ -5,7 +5,7 @@ import { Code } from 'lucide-react'
 
 function Projects() {
   return (
-    <section className='flex flex-col'>
+    <section id='projects' className='flex flex-col'>
       <HeadingContainer icon={Code} sectionTitle={'Featured Projects'} />
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
         {

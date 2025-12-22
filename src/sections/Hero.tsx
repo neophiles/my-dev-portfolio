@@ -1,4 +1,6 @@
 import { useThemeStore } from '../store/themeStore'
+import { highlightLinks } from '../data/highlightLinks';
+import HighlightLink from '../components/HighlightLink';
 import neilPic from '../assets/images/personal/neil.png'
 import { profiles } from '../data/profiles';
 import { MapPin } from 'lucide-react'
@@ -6,8 +8,10 @@ import { MapPin } from 'lucide-react'
 function Hero() {
   const { isDark } = useThemeStore();
 
+  const { MSEUF } = highlightLinks;
+
   return (
-    <section className='flex flex-col items-center lg:flex-row gap-16'>
+    <section id='hero' className='flex flex-col items-center lg:flex-row gap-16 scroll-mt-20'>
       <div className='w-auto flex flex-col items-center gap-4'>
         <div className='w-40 h-40 ring-2 ring-gray-400 dark:ring-gray-800 rounded-full overflow-hidden'>
           <img src={neilPic} alt="Neil's Picture" draggable={false} className='object-cover'/>
@@ -37,7 +41,9 @@ function Hero() {
           Frontend Developer
         </p>
         <p className='text-sm md:text-lg lg:text-xl'>
-          I'm a 2nd-year Computer Science student specializing in Software Engineering at Manuel S. Enverga University Foundation Lucena. I'm passionate about building intuitive, scalable web applications, currently focusing on frontend development with frameworks like React and Next.js to create clean, user-friendly interfaces.
+          {" I'm a 2nd-year Computer Science student specializing in Software Engineering at "}
+          <HighlightLink highlightLink={MSEUF} />
+          {" I'm passionate about building intuitive, scalable web applications, currently focusing on frontend development with frameworks like React and Next.js to create clean, user-friendly interfaces."}
         </p>
       </div>      
     </section>

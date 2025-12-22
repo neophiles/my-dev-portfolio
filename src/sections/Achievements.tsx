@@ -5,7 +5,7 @@ import { FileBadge } from 'lucide-react'
 
 function Achievements() {
   return (
-    <section className='flex flex-col'>
+    <section id='achievements' className='flex flex-col'>
       <HeadingContainer icon={FileBadge} sectionTitle={'Achievements & Certifications'} />
       <div className='grid grid-cols-1 md:grid-cols-2  gap-6'>
         {
