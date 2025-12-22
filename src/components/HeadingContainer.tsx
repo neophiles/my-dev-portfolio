@@ -1,4 +1,4 @@
-import type { LucideIcon } from '../data/icons';
+import type { LucideIcon } from "lucide-react";
 
 function HeadingContainer({ icon: Icon, sectionTitle }: { icon: LucideIcon; sectionTitle: string }) {
   return (
