@@ -7,6 +7,7 @@ import reactLogo from '../assets/logos/tech/react-original.svg'
 import chakraLogo from '../assets/logos/tech/chakraui-original.svg'
 import nextjsLogo from '../assets/logos/tech/nextjs-original.svg'
 import gitLogo from '../assets/logos/tech/git-original.svg'
+import vercelLogo from '../assets/logos/tech/vercel-original.svg'
 
 export type Tech = {
   name: string,
@@ -23,4 +24,5 @@ export const tech: Record<string, Tech> = {
   ChakraUI: { name: 'Chakra UI', logo: chakraLogo },
   NextJS: { name: 'Next JS', logo: nextjsLogo },
   Git: { name: 'Git', logo: gitLogo },
+  Vercel: { name: 'Vercel', logo: vercelLogo },
 }

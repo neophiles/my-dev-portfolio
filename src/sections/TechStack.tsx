@@ -12,6 +12,7 @@ function TechStack() {
     'ChakraUI',
     'NextJS',
     'Git',
+    'Vercel',
   ] as const
 
   const techStack = selectedTech.map((techKey) => ({
