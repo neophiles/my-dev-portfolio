@@ -31,7 +31,7 @@ function ProjectCard({ project }: { project: Project }) {
           {
             projectLabels.length !== 0 && (
               projectLabels.map(labelData => (
-                <ProjectLabelTab labelData={labelData} />
+                <ProjectLabelTab key={labelData.text} labelData={labelData} />
               ))
             )
           }
