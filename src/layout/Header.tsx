@@ -1,21 +1,39 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import useIsScreenSmall from '../hooks/useIsScreenSmall';
 import { useThemeStore } from '../store/themeStore';
-import { sectionLinks } from '../data/sectionLinks';
-import { Sun, Moon } from 'lucide-react';
+import { useSidebarStore } from '../store/sidebarStore';
+import SectionLinks from '../components/SectionLinks';
+import ThemeButton from '../components/ThemeButton';
+import SidebarButton from '../components/SidebarButton';
 import neophilesLogo from '../assets/logos/personal/neophiles-logo.png';
 
 function Header() {
   const { isDark, setIsDark } = useThemeStore();
+  const { onOpen } = useSidebarStore();
+  const [isHeaderMobile, setIsHeaderMobile] = useState(false);
+  const isScreenSmall = useIsScreenSmall();
 
   useEffect(() => {
-    console.log(isDark)
     const root = window.document.documentElement;
     if (isDark) {
       root.classList.add('dark');
+      console.log('Dark mode');
     } else {
       root.classList.remove('dark');
+      console.log('Light mode');
     }
   }, [isDark]);
+
+  useEffect(() => {
+    if (isScreenSmall) {
+      setIsHeaderMobile(true);
+      console.log('Screen small');
+    } else {
+      setIsHeaderMobile(false);
+      onOpen(false);
+      console.log('Screen big');
+    }
+  }, [isScreenSmall]);
 
   const handleGoToTop = () => {
     document.body.scrollTop = 0;
@@ -23,7 +41,7 @@ function Header() {
   };
 
   return (
-    <header className='h-14 w-full sticky top-0 z-10 px-6 dark:bg-gray-950/50 backdrop-blur-lg'>
+    <header className='h-14 w-full sticky top-0 z-20 px-6 dark:bg-gray-950/50 backdrop-blur-lg'>
       <div className='h-full flex items-center justify-between'>
         <div>
           <button onClick={handleGoToTop} className='flex items-center gap-2'>
@@ -35,21 +53,20 @@ function Header() {
         </div>
 
         <div className='flex gap-8'>
-          <div className='flex items-center gap-4'>
-            {
-              sectionLinks.map(([displayName, id]) => (
-                <a key={id} href={id} className='text-md hover:text-blue-800 dark:hover:text-blue-400 transition-colors duration-200'>
-                  {displayName}
-                </a>
-              ))
-            }
-          </div>
+          {
+            !isHeaderMobile ? (
+              <>
+                <div className='flex items-center gap-4'>
+                  <SectionLinks />
+                </div>
 
-          <button onClick={() => setIsDark()} className='cursor-pointer text-yellow-600 dark:text-yellow-400'>
-            { !isDark ? <Sun /> : <Moon /> }
-          </button>
+                <ThemeButton isDark={isDark} onToggleTheme={setIsDark} />
+              </>
+            ) : (
+              <SidebarButton />
+            ) 
+          }
         </div>
-        
       </div>
     </header>
   )
