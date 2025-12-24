@@ -1,7 +1,6 @@
 import type { Project } from '../data/projects'
 import GitHubLink from './GitHubLink'
 import ProjectLabelTab from './ProjectLabelTab'
-import { Github } from 'lucide-react'
 
 function ProjectCard({ project }: { project: Project }) {
   const {
