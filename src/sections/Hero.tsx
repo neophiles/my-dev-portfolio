@@ -41,9 +41,9 @@ function Hero() {
           Frontend Developer
         </p>
         <p className='text-sm md:text-lg lg:text-xl'>
-          {" I'm a 2nd-year Computer Science student specializing in Software Engineering at "}
+          {"I’m a second-year Computer Science student specializing in Software Engineering at "}
           <HighlightLink highlightLink={MSEUF} />
-          {" I'm passionate about building intuitive, scalable web applications, currently focusing on frontend development with frameworks like React and Next.js to create clean, user-friendly interfaces."}
+          {". I enjoy building intuitive web applications and currently focus on frontend development with React, while exploring tools like Next.js to expand my skill set."}
         </p>
       </div>      
     </section>
