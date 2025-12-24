@@ -2,13 +2,10 @@
 
 This is my personal developer portfolio website that serves as a mini e-resume. It showcases who I am, my skills and achievements, and some of the meaningful projects I’ve worked on as a computer science student so far.
 
-## Status
-
-**Not yet deployed**
-
 ## Features
-- Responsive personal website
-- About me section
+- Responsive SPA
+- Light/dark mode toggle
+- Hero / About me section
 - Skills & technologies
 - Projects overview
 - Achievements & Certifications
@@ -54,7 +51,6 @@ http://localhost:5173/
 ```
 
 ## Future Improvements
-- Deploy the site
 - Add more skills, projects, and achievements
 - Improve UI/UX
 - Add animations
